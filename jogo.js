@@ -16,6 +16,14 @@ const FlappyBird = {
     gravidade: 0.25,
     velocidade: 0,
     pulo: 4.6,
+    movimentos:[
+        { spriteX: 0, spriteY: 0,}, // asa pra cima
+        { spriteX: 0, spriteY: 26,}, //asa no meio 
+        { spriteX: 0, spriteY: 52,}, // asa pra baixo       
+        { spriteX: 0, spriteY: 26,}, // asa no meio     
+    
+        
+    ],
     pula() {
         FlappyBird.velocidade = -FlappyBird.pulo;
     },
@@ -57,6 +65,7 @@ const Chao = {
     altura: 109,
     x: 0,
     y: canvas.height - 109,
+   
     desenha() {
         contexto.drawImage(
             sprites,
@@ -73,7 +82,14 @@ const Chao = {
             (Chao.x + Chao.largura), Chao.y,
             Chao.largura, Chao.altura,
         )
-    }
+    },
+    atualiza() {
+        Chao.x = Chao.x - 0;
+        Chao.x = Chao.x % (Chao.largura / 2);
+        // console.log(Chao.largura / 2)
+    },
+    
+
 }
 const Background = {
     spriteX: 390,
@@ -136,6 +152,7 @@ const ScreenGame = {
     desenha() {
         Background.desenha();
         Chao.desenha();
+        Chao.atualiza();
         FlappyBird.desenha();
         FlappyBird.atualiza();
     },
