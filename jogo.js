@@ -147,7 +147,7 @@ const ScreenStart = {
     click() {
         telaAtiva = ScreenGame;
         FlappyBird.pula();
-    }
+    } 
 }
 const ScreenGame = {
     desenha() {
