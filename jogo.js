@@ -88,6 +88,7 @@ const Chao = {
         Chao.x = Chao.x - 1;
         Chao.x = Chao.x % (Chao.largura / 2);
         // chao não deu certo :(
+            
     },
     
 
