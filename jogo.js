@@ -74,7 +74,6 @@ function criaChao() {
 
             Chao.x = movimentacao % repeteEm;
         },
-
         desenha() {
             contexto.drawImage(
                 sprites,
@@ -91,7 +90,6 @@ function criaChao() {
                 Chao.largura, Chao.altura,
             )
         },
-
     }
     return Chao;
 }
@@ -125,8 +123,6 @@ function criaBackground() {
                 Background.x + (Background.largura * 2), Background.y,
                 Background.largura, Background.altura,
             );
-
-
         },
         atualiza() {
             Background.x = Background.x - 0.5;
@@ -212,7 +208,6 @@ function criaCanos() {
                 if (fazColisaoObstaculo(par)) {
                     som_punch.play();
                     telaAtiva = telaGameOver;
-
                 }
             } return;
         }
@@ -310,7 +305,6 @@ const telaGameOver = {
         telaGameOver = ScreenStart;
     }
 }
-
 var telaAtiva = ScreenStart
 function loop() {
     telaAtiva.desenha();
